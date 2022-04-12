@@ -1,0 +1,7 @@
+{
+  "name": "Delivery System JH [Ionic React]",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
