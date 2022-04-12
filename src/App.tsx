@@ -1,8 +1,22 @@
 import React from 'react';
 import {
   IonApp,
-  IonRouterOutlet,
-  setupIonicReact
+  IonHeader,
+  IonContent,
+  setupIonicReact,
+  IonToolbar,
+  IonTitle,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonItem,
+  IonLabel,
+  IonInput,
+  IonCard,
+  IonCardContent,
+  IonButton,
+  IonIcon,
+  IonAlert
 } from '@ionic/react';
 import { calculatorOutline, pin, refreshOutline } from 'ionicons/icons';
 
@@ -27,10 +41,30 @@ import './theme/variables.css';
 
 setupIonicReact();
 
-const App: React.FC = () => (
-  <IonApp>
+const App: React.FC = () => {
 
-  </IonApp>
-);
+  return (
+    <React.Fragment>
+      <IonApp>
+        <IonHeader>
+          <IonToolbar color="primary">
+            <IonTitle>
+              Home
+            </IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        <IonContent fullscreen className='ion-padding'>
+          <IonGrid>
+            <IonRow>
+              <IonCol>
+                Working
+              </IonCol>
+            </IonRow>
+          </IonGrid>
+        </IonContent>
+      </IonApp>
+    </React.Fragment>
+  );
+};
 
 export default App;
