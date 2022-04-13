@@ -16,7 +16,10 @@ import {
   IonCardContent,
   IonButton,
   IonIcon,
-  IonAlert
+  IonAlert,
+  IonPage,
+  IonSegment,
+  IonSegmentButton
 } from '@ionic/react';
 import { calculatorOutline, pin, refreshOutline } from 'ionicons/icons';
 
@@ -46,22 +49,31 @@ const App: React.FC = () => {
   return (
     <React.Fragment>
       <IonApp>
-        <IonHeader>
-          <IonToolbar color="primary">
-            <IonTitle>
-              Home
-            </IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <IonContent fullscreen className='ion-padding'>
-          <IonGrid>
-            <IonRow>
-              <IonCol>
-                Working
-              </IonCol>
-            </IonRow>
-          </IonGrid>
-        </IonContent>
+        <IonPage>
+          <IonHeader>
+            <IonToolbar color="primary">
+              <IonTitle>
+                Home
+              </IonTitle>
+            </IonToolbar>
+          </IonHeader>
+          <IonContent className='ion-padding'>
+            <IonGrid>
+              <IonRow>
+                <IonSegment value="First">
+                  <IonSegmentButton value='First'>First</IonSegmentButton>
+                  <IonSegmentButton value='Second'>Second</IonSegmentButton>
+                  <IonSegmentButton value='Third'>Third</IonSegmentButton>
+                </IonSegment>
+              </IonRow>
+              <IonRow>
+                <IonCol>
+                  Working
+                </IonCol>
+              </IonRow>
+            </IonGrid>
+          </IonContent>
+        </IonPage>
       </IonApp>
     </React.Fragment>
   );
