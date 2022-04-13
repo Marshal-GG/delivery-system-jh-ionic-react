@@ -16,9 +16,18 @@ import {
   IonCardContent,
   IonButton,
   IonIcon,
-  IonAlert
+  IonAlert,
+  IonPage,
+  IonSegment,
+  IonSegmentButton,
+  IonTabs,
+  IonTabBar,
+  IonTabButton,
+  IonRoute
 } from '@ionic/react';
 import { calculatorOutline, pin, refreshOutline } from 'ionicons/icons';
+import { Router } from 'react-router';
+import { Routes, Route, Link } from 'react-router-dom';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -43,25 +52,68 @@ setupIonicReact();
 
 const App: React.FC = () => {
 
+  function Home() {
+    return (
+      <>
+        <main>
+          <h2>Welcome to the homepage!</h2>
+          <p>You can do this, I believe in you.</p>
+        </main>
+        <nav>
+          <Link to="/about">About</Link>
+        </nav>
+      </>
+    );
+  }
+
+  function About() {
+    return (
+      <>
+        <main>
+          <h2>Who are we?</h2>
+          <p>
+            That feels like an existential question, don't you
+            think?
+          </p>
+        </main>
+        <nav>
+          <Link to="/">Home</Link>
+        </nav>
+      </>
+    );
+  }
+
   return (
     <React.Fragment>
       <IonApp>
-        <IonHeader>
-          <IonToolbar color="primary">
-            <IonTitle>
-              Home
-            </IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <IonContent fullscreen className='ion-padding'>
-          <IonGrid>
-            <IonRow>
-              <IonCol>
-                Working
-              </IonCol>
-            </IonRow>
-          </IonGrid>
-        </IonContent>
+        <IonPage>
+          <IonHeader>
+            <IonToolbar color="primary">
+              <IonTitle>
+                Home
+              </IonTitle>
+            </IonToolbar>
+          </IonHeader>
+          <IonContent fullscreen className='ion-padding'>
+            <IonGrid>
+
+              <IonRow>
+                <IonSegment value="First">
+                  <IonSegmentButton value='First'>First</IonSegmentButton>
+                  <IonSegmentButton value='Second'>Second</IonSegmentButton>
+                  <IonSegmentButton value='Third'>Third</IonSegmentButton>
+                </IonSegment>
+              </IonRow>
+
+              <IonRow>
+                <IonCol>
+                  Working
+                </IonCol>
+              </IonRow>
+
+            </IonGrid>
+          </IonContent>
+        </IonPage>
       </IonApp>
     </React.Fragment>
   );
